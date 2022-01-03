@@ -9,20 +9,24 @@ export type Winner = {
   selections: Coordinates[];
 };
 
+export type GameStatus = 'playing' | 'won' | 'draw';
+
 export type State = {
   board: Entry[][];
   turn: Player;
   curSelection: Coordinates | null;
   winner: Winner;
+  gameStatus: 'playing' | 'won' | 'draw';
 };
 
 export type ActionKind =
-  | 'SET_WINNER'
+  | 'SET_BOARD'
   | 'SET_SELECTION'
   | 'SET_TURN'
+  | 'SET_WINNER'
   | 'RESET_GAME';
 
 export type Action = {
   type: ActionKind;
-  payload: any;
+  payload?: any;
 };

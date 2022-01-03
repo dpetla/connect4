@@ -22,4 +22,5 @@ export const initialState: State = {
     player: null,
     selections: [],
   },
+  gameStatus: 'playing',
 };
